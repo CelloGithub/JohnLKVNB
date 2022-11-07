@@ -29,13 +29,13 @@ local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/Re
 
 
 ReSt.GameData.LatestRoom.Changed:Connect(function()
-local Shadow : Part = LoadCustomInstance("https://github.com/Noonie1/RandomUtilities/blob/ShadowScript/Sbadow.rbxm?raw=true")
+local Jack : Part = LoadCustomInstance("https://https://github.com/CelloGithub/JohnLKVNB/blob/main/Slacker.rbxm?raw=true")
 
 Shadow.Parent = workspace
 Shadow.Anchored = true
 local End = workspace.CurrentRooms[ReSt.GameData.LatestRoom.Value]:FindFirstChild("RoomStart")
 local offset = Vector3.new(0,0,-15)
-local ScarySound = GetGitSound("https://github.com/Noonie1/RandomUtilities/blob/ShadowScript/Shadow.mp3?raw=true","Spooker")
+local ScarySound = GetGitSound("https://https://github.com/CelloGithub/JohnLKVNB/blob/main/JackScare.mp3?raw=true","Spooker")
 events.flickerLights(workspace.CurrentRooms[ReSt.GameData.LatestRoom.Value],0.5)
 ScarySound.Parent = workspace
 ScarySound:Play()
@@ -43,7 +43,13 @@ ScarySound.Volume = 1
 ScarySound.Pitch = Random.new():NextNumber(0.6,1)
 Shadow.CFrame = End.CFrame*CFrame.new(offset)
 wait(0.6)
+local v1 = require(game.ReplicatedStorage.ClientModules.Module_Events)
+		local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
+		local seconds = 25 -- Change to how long the blood room will last.
+		v1.tryp(workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], seconds)	
 ScarySound:Destroy()
-Shadow:Destroy()
+Jack:Destroy()
+
+
 
 end)
