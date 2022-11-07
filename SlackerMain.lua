@@ -1,4 +1,16 @@
+--[[
 
+ ________ __                         __                     __    __                            __            __   
+|        \  \                       |  \                   |  \  |  \                          |  \         _/  \  
+ \▓▓▓▓▓▓▓▓ ▓▓____   ______  _______ | ▓▓   __  _______     | ▓▓\ | ▓▓ ______   ______  _______  \▓▓ ______ |   ▓▓  
+   | ▓▓  | ▓▓    \ |      \|       \| ▓▓  /  \/       \    | ▓▓▓\| ▓▓/      \ /      \|       \|  \/      \ \▓▓▓▓  
+   | ▓▓  | ▓▓▓▓▓▓▓\ \▓▓▓▓▓▓\ ▓▓▓▓▓▓▓\ ▓▓_/  ▓▓  ▓▓▓▓▓▓▓    | ▓▓▓▓\ ▓▓  ▓▓▓▓▓▓\  ▓▓▓▓▓▓\ ▓▓▓▓▓▓▓\ ▓▓  ▓▓▓▓▓▓\ | ▓▓  
+   | ▓▓  | ▓▓  | ▓▓/      ▓▓ ▓▓  | ▓▓ ▓▓   ▓▓ \▓▓    \     | ▓▓\▓▓ ▓▓ ▓▓  | ▓▓ ▓▓  | ▓▓ ▓▓  | ▓▓ ▓▓ ▓▓    ▓▓ | ▓▓  
+   | ▓▓  | ▓▓  | ▓▓  ▓▓▓▓▓▓▓ ▓▓  | ▓▓ ▓▓▓▓▓▓\ _\▓▓▓▓▓▓\    | ▓▓ \▓▓▓▓ ▓▓__/ ▓▓ ▓▓__/ ▓▓ ▓▓  | ▓▓ ▓▓ ▓▓▓▓▓▓▓▓_| ▓▓_ 
+   | ▓▓  | ▓▓  | ▓▓\▓▓    ▓▓ ▓▓  | ▓▓ ▓▓  \▓▓\       ▓▓    | ▓▓  \▓▓▓\▓▓    ▓▓\▓▓    ▓▓ ▓▓  | ▓▓ ▓▓\▓▓     \   ▓▓ \
+    \▓▓   \▓▓   \▓▓ \▓▓▓▓▓▓▓\▓▓   \▓▓\▓▓   \▓▓\▓▓▓▓▓▓▓      \▓▓   \▓▓ \▓▓▓▓▓▓  \▓▓▓▓▓▓ \▓▓   \▓▓\▓▓ \▓▓▓▓▓▓▓\▓▓▓▓▓▓
+
+]]
 local Plr = game.Players.LocalPlayer
 local ReSt = game.ReplicatedStorage
 local events = require(game.ReplicatedStorage.ClientModules.Module_Events)
@@ -31,8 +43,8 @@ local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/Re
 ReSt.GameData.LatestRoom.Changed:Connect(function()
 local Jack : Part = LoadCustomInstance("https://https://github.com/CelloGithub/JohnLKVNB/blob/main/Slacker.rbxm?raw=true")
 
-Shadow.Parent = workspace
-Shadow.Anchored = true
+Jack.Parent = workspace
+Jack.Anchored = true
 local End = workspace.CurrentRooms[ReSt.GameData.LatestRoom.Value]:FindFirstChild("RoomStart")
 local offset = Vector3.new(0,0,-15)
 local ScarySound = GetGitSound("https://https://github.com/CelloGithub/JohnLKVNB/blob/main/JackScare.mp3?raw=true","Spooker")
@@ -41,7 +53,7 @@ ScarySound.Parent = workspace
 ScarySound:Play()
 ScarySound.Volume = 1
 ScarySound.Pitch = Random.new():NextNumber(0.6,1)
-Shadow.CFrame = End.CFrame*CFrame.new(offset)
+Jack.CFrame = End.CFrame*CFrame.new(offset)
 wait(0.6)
 local v1 = require(game.ReplicatedStorage.ClientModules.Module_Events)
 		local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
